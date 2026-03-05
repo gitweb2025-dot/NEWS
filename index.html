@@ -1,0 +1,1979 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Stackly | Breaking World, Tech & Business News</title>
+
+    <meta
+      name="description"
+      content="Stackly delivers breaking news, in-depth analysis, and latest updates on world affairs, technology, business, and lifestyle."
+    />
+    <meta name="author" content="Stackly" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://www.stackly.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Stackly | Breaking World, Tech & Business News"
+    />
+    <meta
+      property="og:description"
+      content="Stay updated with breaking headlines, in-depth reports, and global news coverage."
+    />
+    <meta property="og:url" content="https://www.stackly.com/" />
+    <meta property="og:site_name" content="Stackly" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollTo -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+    <!-- ScrollSmoother  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/EasePack.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Della+Respira&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Julius+Sans+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- J-QUERY CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- LENIS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.17/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="font-primary">
+    <!-- CURSOR -->
+    <div class="cursor">
+      <div class="cursor-dot"></div>
+    </div>
+
+    <!-- LOADER -->
+    <div id="re-loader" class="re-loader-wrap">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative w-[320px]">
+          <!-- UI shell -->
+          <div class="space-y-4">
+            <div class="h-4 w-32 rounded bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-3/4 s\ 0rounded-lg bg-gray-100"></div>
+          </div>
+
+          <div
+            class="absolute -bottom-12 left-0 font-medium text-black text-2xl"
+          >
+            Stackly <span class="text-red-600">News</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SITE CONTENT -->
+    <div>
+      <!-- HEADER WITH HOME -->
+      <div class="relative max-w-7xl mx-auto w-full overflow-hidden">
+        <!-- NAVBAR -->
+        <header
+          id="navbar"
+          class="fixed top-0 left-0 right-0 max-w-7xl mx-auto w-full z-40 text-sm"
+        >
+          <!-- DESKTOP NAVBAR -->
+          <nav
+            aria-label="navbar"
+            id="navbar"
+            class="bg-white flex items-center justify-between px-6 md:px-12 py-8 text-black border-b border-gray-300"
+          >
+            <div>
+              <a class="font-bold" href="./index.html">STACKLY</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+              <!-- HOME DROPDOWN -->
+              <div class="relative">
+                <div class="flex items-center gap-1 font-medium">
+                  <a class="nav-hover" href="./index.html" class="font-medium"
+                    ><span data-text="HOME">HOME</span></a
+                  >
+
+                  <button id="homeToggle">
+                    <svg
+                      id="homeCaret"
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Dropdown -->
+                <div
+                  id="homeMenu"
+                  class="absolute left-0 mt-8 w-36 bg-white text-black backdrop-blur-xl overflow-hidden hidden"
+                >
+                  <a
+                    href="./home/index.html"
+                    class="home-item block px-6 py-4 text-sm hover:bg-primary/10"
+                    >Home 2</a
+                  >
+                </div>
+              </div>
+
+              <a class="nav-hover" href="./politics.html"
+                ><span data-text="POLITICS">POLITICS</span></a
+              >
+              <a class="nav-hover" href="./sports.html"
+                ><span data-text="SPORTS">SPORTS</span></a
+              >
+              <a class="nav-hover" href="./media.html"
+                ><span data-text="MEDIA">MEDIA</span></a
+              >
+              <a class="nav-hover" href="./contact.html"
+                ><span data-text="CONTACT">CONTACT</span></a
+              >
+              <a class="nav-hover" href="./dashboard.html"
+                ><span data-text="DASHBOARD">DASHBOARD</span></a
+              >
+            </div>
+            <div class="hidden lg:flex">
+              <a href="./login.html">Login</a>
+            </div>
+
+            <!-- HAMBURGER ICON -->
+            <div class="text-2xl cursor-pointer ham-icon block lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </nav>
+
+          <!-- MOBILE NAV -->
+          <div
+            class="fixed inset-0 w-full min-h-screen bg-white flex flex-col gap-12 justify-center px-12 md:px-20 z-40 transform translate-x-full transition-transform duration-1000 text-xl sm:text-3xl font-bold mobile-menu"
+          >
+            <!-- HOME with sub menu -->
+            <div class="relative">
+              <div class="flex items-center gap-2 menu-link">
+                <a href="./index.html">HOME</a>
+
+                <button id="mobileHomeToggle">
+                  <i
+                    id="mobileCaret"
+                    class="fa-solid fa-chevron-down text-lg"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="mt-4 hidden absolute bg-white rounded-lg z-40 w-40 px-6 py-6 text-2xl"
+                id="mobileHomeMenu"
+              >
+                <a class="block mobile-home-item mb-3" href="./home/index.html"
+                  >Home 2</a
+                >
+              </div>
+            </div>
+
+            <a class="menu-link" href="./politics.html">POLITICS</a>
+            <a class="menu-link" href="./sports.html">SPORTS</a>
+            <a class="menu-link" href="./media.html">MEDIA</a>
+            <a class="menu-link" href="./contact.html">CONTACT</a>
+            <a class="menu-link" href="./login.html">LOGIN</a>
+            <button
+              class="close-menu text-2xl cursor-pointer absolute top-10 right-12 p-4 border border-white/20 rounded-full"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- HOME -->
+        <main id="home"></main>
+      </div>
+
+      <!-- TOP NEWS -->
+      <section
+        class="bg-white max-w-7xl mx-auto px-3 md:px-6 py-6 mt-32 border-t border-b border-gray-200"
+      >
+        <div class="relative">
+          <!-- SWIPER -->
+          <div class="swiper headlineTickerSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="headline-card">
+                  <img src="./src/assets/home1.webp" alt="topnews" />
+                  <h3 class="line-clamp-3 hover-underline">
+                    Business Agility In The Digital Age Leveraging AI And
+                    Strategic Control For Sustainable Growth And Market
+                    Leadership
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="headline-card">
+                  <img src="./src/assets/home3.webp" alt="topnews" />
+                  <h3 class="line-clamp-3 hover-underline">
+                    The Rise Of Gourmet Street Food Trends, Innovation, And
+                    Urban Culinary Culture Reshaping The Global Dining
+                    Experience
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="headline-card">
+                  <img src="./src/assets/home4.webp" alt="topnews" />
+                  <h3 class="line-clamp-3 hover-underline">
+                    Next-Generation Headphone Technology Spatial Audio, Smart
+                    Noise Cancellation And The Future Of Immersive Listening
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="headline-card">
+                  <img src="./src/assets/tel1.webp" alt="topnews" />
+                  <h3 class="line-clamp-3 hover-underline">
+                    Solo Travel For Modern Explorers Smart Planning, Bold
+                    Destinations And Meaningful Personal Journeys
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="headline-card">
+                  <img src="./src/assets/kar2.webp" alt="topnews" />
+                  <h3 class="line-clamp-3 hover-underline">
+                    Virtual Reality In Mental Health Care Revolutionizing
+                    Therapeutic Techniques And Enhancing Patient Recovery
+                    Outcomes
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NAVIGATION -->
+          <div class="headline-prev"></div>
+          <div class="headline-next"></div>
+        </div>
+      </section>
+
+      <!-- TRENDING -->
+      <section
+        class="trendSection max-w-7xl mx-auto px-3 md:px-6 pt-8 pb-16 border-b border-gray-300 overflow-hidden"
+      >
+        <!-- Heading -->
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-6 h-0.75 bg-red-600"></div>
+          <h2
+            class="text-lg font-semibold text-red-600 tracking-wide uppercase"
+          >
+            Trending
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 lg:gap-10">
+          <!-- LEFT FEATURE -->
+          <div class="relative newsHeroWrapper col-span-2 overflow-hidden">
+            <button class="newsHeroPrev">
+              <i class="fa-solid fa-chevron-up"></i>
+            </button>
+
+            <button class="newsHeroNext">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="swiper newsHeroMainSwiper">
+              <div class="swiper-wrapper">
+                <!-- SLIDE -->
+                <div class="swiper-slide">
+                  <div class="newsHeroSlide">
+                    <img
+                      class="newsHeroBg"
+                      src="./src/assets/home4.webp"
+                      alt="news"
+                    />
+
+                    <div class="newsHeroOverlay">
+                      <div class="newsHeroAuthor">
+                        <img
+                          src="https://randomuser.me/api/portraits/women/45.jpg"
+                        />
+                        <span>By Jane Taylor</span>
+                      </div>
+
+                      <span class="newsHeroCategory">Technology</span>
+
+                      <h2 class="newsHeroTitle">
+                        Climate change: What do scientists want this week?
+                      </h2>
+
+                      <div class="newsHeroMeta">
+                        <span
+                          ><i class="fa-solid fa-clock"></i> 05 December
+                          2021</span
+                        >
+                        <span><i class="fa-solid fa-comment"></i> 25</span>
+                        <span><i class="fa-solid fa-eye"></i> 164</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="newsHeroSlide">
+                    <img
+                      class="newsHeroBg"
+                      src="./src/assets/home1.webp"
+                      alt="news"
+                    />
+
+                    <div class="newsHeroOverlay">
+                      <div class="newsHeroAuthor">
+                        <img
+                          src="https://randomuser.me/api/portraits/men/32.jpg"
+                        />
+                        <span>By Mark Rose</span>
+                      </div>
+
+                      <span class="newsHeroCategory">Technology</span>
+
+                      <h2 class="newsHeroTitle">
+                        AI companies race to build safer artificial intelligence
+                        models
+                      </h2>
+
+                      <div class="newsHeroMeta">
+                        <span
+                          ><i class="fa-solid fa-clock"></i> 12 April 2024</span
+                        >
+                        <span><i class="fa-solid fa-comment"></i> 18</span>
+                        <span><i class="fa-solid fa-eye"></i> 210</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="newsHeroSlide">
+                    <img
+                      class="newsHeroBg"
+                      src="./src/assets/home3.webp"
+                      alt="news"
+                    />
+
+                    <div class="newsHeroOverlay">
+                      <div class="newsHeroAuthor">
+                        <img
+                          src="https://randomuser.me/api/portraits/men/55.jpg"
+                        />
+                        <span>By Daniel Carter</span>
+                      </div>
+
+                      <span class="newsHeroCategory">Science</span>
+
+                      <h2 class="newsHeroTitle">
+                        NASA prepares Artemis mission as Moon exploration
+                        resumes
+                      </h2>
+
+                      <div class="newsHeroMeta">
+                        <span
+                          ><i class="fa-solid fa-clock"></i> 15 April 2024</span
+                        >
+                        <span><i class="fa-solid fa-comment"></i> 12</span>
+                        <span><i class="fa-solid fa-eye"></i> 98</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="newsHeroPagination"></div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="grid grid-rows-3 gap-4">
+            <!-- CARD 1 -->
+            <div class="trend-card flex gap-5">
+              <img
+                src="./src/assets/home4.webp"
+                alt="news"
+                class="w-32 h-full object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug line-clamp-4">
+                  A Torchbearer for Women’s Economic Empowerment Driving
+                  Inclusive Growth Through Innovation and Leadership Reshaping
+                  Opportunities for the Next Generation
+                </h3>
+
+                <div
+                  class="mt-3 flex items-center justify-between text-xs text-gray-500"
+                >
+                  <span>05 April 2023</span>
+                  <span class="text-red-600">10 min read</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="trend-card flex gap-5">
+              <img
+                src="./src/assets/special.webp"
+                alt="news"
+                class="w-32 h-full object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug line-clamp-4">
+                  Special Eid Train Announced on Joydebpur–Panchagarh Route
+                  Additional Services Introduced to Ease Holiday Travel Pressure
+                  Rail Authorities Prepare for Record Passenger Demand
+                </h3>
+
+                <div
+                  class="mt-3 flex items-center justify-between text-xs text-gray-500"
+                >
+                  <span>05 April 2023</span>
+                  <span class="text-red-600">10 min read</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="trend-card flex gap-5">
+              <img
+                src="./src/assets/cricket.webp"
+                alt="news"
+                class="w-32 h-full object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug line-clamp-4">
+                  Shakib and Taijul Shine in Dominant Performance Bangladesh
+                  Clinch Series Victory with Clinical Precision All-Round
+                  Brilliance Secures Historic Win
+                </h3>
+
+                <div
+                  class="mt-3 flex items-center justify-between text-xs text-gray-500"
+                >
+                  <span>05 April 2023</span>
+                  <span class="text-red-600">10 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOP PICKS -->
+      <section
+        class="max-w-7xl mx-auto py-16 border-b border-gray-300 px-3 md:px-6 overflow-hidden"
+      >
+        <div class="relative">
+          <h2 class="text-red-600 text-lg font-semibold mb-8 uppercase">
+            Top Picks
+          </h2>
+
+          <div class="swiper topPicksNewsSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src//assets/govern.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">Sponsored</p>
+                    <h3>
+                      Governance, cybersecurity move to centre stage in AI
+                      conversations
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src/assets/attukala.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">Kerala</p>
+                    <h3>
+                      Attukal Pongala under way as thousands of devotees offer
+                      pongala
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src/assets/modi.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">Visual Story</p>
+                    <h3>Holy river, toxic passage: The Yamuna through Delhi</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src/assets/lunar.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">Science</p>
+                    <h3>
+                      Lunar Eclipse 2026: When, where and how to watch in India
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src/assets/eu.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">World</p>
+                    <h3>
+                      EU leaders meet to debate economic response to global
+                      slowdown
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="swiper-slide">
+                <div class="tp-card">
+                  <img src="./src/assets/dubai.webp" alt="news" />
+                  <div class="tp-overlay">
+                    <p class="tp-tag">World</p>
+                    <h3>
+                      EU leaders meet to debate economic response to global
+                      slowdown
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="tp-prev-btn">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="tp-next-btn">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+
+          <!-- Pagination -->
+          <div class="tp-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 3 VIEW -->
+      <section
+        class="editorialSection max-w-7xl mx-auto px-3 md:px-6 py-20 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- LEFT COLUMN -->
+
+          <div class="sideColumn space-y-8">
+            <a href="./404.html" class="flex items-center text-red-600">
+              <h2 class="text-sm font-semibold tracking-wide uppercase">
+                POLITICS
+              </h2>
+              <i class="fa-solid fa-angle-right text-sm"></i>
+            </a>
+
+            <!-- Article -->
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  The Power Shift in Tamil Nadu Politics Shaping the Next Era of
+                  Leadership and Governance
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">2 months ago</p>
+              </div>
+
+              <img
+                src="./src/assets/tamil1.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  Inside Tamil Nadu’s Political Landscape Decisions, Alliances,
+                  and the Battle for Power
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">2 months ago</p>
+              </div>
+
+              <img
+                src="./src/assets/kar1.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  The Changing Face of Tamil Nadu Governance Policies, Power,
+                  and the Public Voice
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">2 months ago</p>
+              </div>
+
+              <img
+                src="./src/assets/ker1.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  Tamil Nadu’s Political Turning Point Leadership, Reform, and
+                  the Road Ahead
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">1 month ago</p>
+              </div>
+
+              <img
+                src="./src/assets/tamil1.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- CENTER FEATURE -->
+
+          <div class="center-feature relative overflow-hidden">
+            <img
+              src="./src/assets/food.webp"
+              alt="news"
+              class="w-full h-140 object-cover"
+            />
+
+            <div
+              class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"
+            ></div>
+
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-4 text-white"
+            >
+              <p class="text-xs tracking-wide uppercase text-gray-300">
+                1 Month
+              </p>
+
+              <h2 class="mt-3 text-3xl leading-snug font-semibold">
+                Guide to The Rise of Gourmet Street Food: Trends and Urban
+                Culinary Innovation
+              </h2>
+
+              <div class="flex items-center gap-6 mt-6 text-sm text-gray-300">
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./src/assets/tamil1.webp"
+                    alt="profile"
+                    class="w-8 h-8 rounded-full"
+                  />
+                  <span>Anis Lew</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="fa-regular fa-comment"></i>
+                  <span>3</span>
+                </div>
+
+                <div>
+                  <i class="fa-regular fa-bookmark"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+
+          <div class="sideColumn space-y-8">
+            <a href="./media.html" class="flex items-center text-red-600">
+              <h2 class="text-sm font-semibold tracking-wide uppercase">
+                MEDIA
+              </h2>
+              <i class="fa-solid fa-angle-right text-sm"></i>
+            </a>
+
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  The Rise of Tamil Cinema Power Influence, Stardom, and the
+                  Industry’s Next Chapter
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">1 week ago</p>
+              </div>
+
+              <img
+                src="./src/assets/top-media-1.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  Tamil Cinema’s Changing Era New Voices, Bold Stories, and the
+                  Future of Film
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">2 weeks ago</p>
+              </div>
+
+              <img
+                src="./src/assets/top-media-2.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start border-b pb-6">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  The New Wave of Kollywood Creativity, Technology, and a Global
+                  Audience
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">1 month ago</p>
+              </div>
+
+              <img
+                src="./src/assets/dune.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+
+            <div class="side-article flex gap-4 items-start">
+              <div class="flex-1">
+                <h3 class="leading-snug line-clamp-2">
+                  Tamil Cinema at a Crossroads Tradition, Innovation, and the
+                  Next Generation of Stars
+                </h3>
+                <p class="text-xs text-gray-500 mt-2">1 month ago</p>
+              </div>
+
+              <img
+                src="./src/assets/top-media-3.webp"
+                alt="news"
+                class="w-20 h-20 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOT NOW -->
+      <section
+        class="max-w-7xl mx-auto py-16 border-t border-b border-gray-300 px-3 md:px-6 overflow-hidden"
+      >
+        <div class="relative">
+          <h3 class="text-lg text-red-600 tracking-widest font-bold mb-10">
+            HOT NOW
+          </h3>
+
+          <div class="swiper hotNowTickerSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="hn-card">
+                  <img src="./src/assets/home1.webp" alt="news" />
+                  <h4>
+                    AI Powered Assistants Rise: How They Manage Tasks
+                    Efficiently
+                  </h4>
+                  <div class="hn-meta">2 hrs · 12 comments</div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="hn-card">
+                  <img src="./src/assets/hot1.webp" alt="news" />
+                  <h4>
+                    Business Agility in Digital Age: Leveraging AI and
+                    Automation
+                  </h4>
+                  <div class="hn-meta">3 hrs · 9 comments</div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="hn-card">
+                  <img src="./src/assets/tel1.webp" alt="news" />
+                  <h4>Guide to the Rise of Gourmet Street Food Trends</h4>
+                  <div class="hn-meta">1 hr · 6 comments</div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="hn-card">
+                  <img src="./src/assets/home4.webp" alt="news" />
+                  <h4>Headphone Market Surges Amid Hybrid Work Expansion</h4>
+                  <div class="hn-meta">45 mins · 4 comments</div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="hn-card">
+                  <img src="./src/assets/dubai.webp" alt="news" />
+                  <h4>
+                    Global Markets React to New Energy Policy Announcements
+                  </h4>
+                  <div class="hn-meta">30 mins · 8 comments</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <div class="hotNow-prev"></div>
+          <div class="hotNow-next"></div>
+
+          <!-- Pagination -->
+          <div class="hotNow-pagination"></div>
+        </div>
+      </section>
+
+      <!-- LATEST VIDEO SECTION -->
+      <section
+        class="latestVideoSection max-w-7xl mx-auto py-16 border-b border-gray-300 px-3 md:px-6 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- LEFT FEED -->
+
+          <div class="feedColumn lg:col-span-2 space-y-6">
+            <h3
+              class="text-lg text-red-600 font-semibold tracking-widest uppercase border-b border-black pb-3"
+            >
+              Latest News
+            </h3>
+
+            <!-- Item -->
+            <div class="feed-item flex gap-4 border-b pb-4">
+              <div class="flex-1">
+                <h4 class="leading-snug">
+                  From Gurukul to Global Board: Baba Ramdev on India’s Education
+                  Evolution
+                </h4>
+                <p class="text-xs text-gray-500 mt-2">
+                  The yoga entrepreneur highlights the shift from traditional
+                  learning to globalized education systems.
+                </p>
+              </div>
+              <img
+                src="./src/assets/tel1.webp"
+                alt="news"
+                class="w-32 h-20 object-cover"
+              />
+            </div>
+
+            <div class="feed-item flex gap-4 border-b pb-4">
+              <div class="flex-1">
+                <h4 class="leading-snug">
+                  NEET Policy Reform: AAP Seeks Nationwide Transparency
+                </h4>
+                <p class="text-xs text-gray-500 mt-2">
+                  Lawmakers demand clearer evaluation criteria amid student
+                  protests.
+                </p>
+              </div>
+              <img
+                src="./src/assets/home4.webp"
+                alt="news"
+                class="w-32 h-20 object-cover"
+              />
+            </div>
+
+            <div class="feed-item flex gap-4 border-b pb-4">
+              <div class="flex-1">
+                <h4 class="leading-snug">
+                  Missile Strike Alert: US Embassy Issues Advisory in Riyadh
+                </h4>
+                <p class="text-xs text-gray-500 mt-2">
+                  Diplomatic channels remain active following regional tensions.
+                </p>
+              </div>
+              <img
+                src="./src/assets/tamil4.webp"
+                alt="news"
+                class="w-32 h-20 object-cover"
+              />
+            </div>
+
+            <div class="feed-item flex gap-4 border-b pb-4">
+              <div class="flex-1">
+                <h4 class="leading-snug">
+                  Missile Strike Alert: US Embassy Issues Advisory in Riyadh
+                </h4>
+                <p class="text-xs text-gray-500 mt-2">
+                  Diplomatic channels remain active following regional tensions.
+                </p>
+              </div>
+              <img
+                src="./src/assets/attukala.webp"
+                alt="news"
+                class="w-32 h-20 object-cover"
+              />
+            </div>
+
+            <div class="feed-item flex gap-4">
+              <div class="flex-1">
+                <h4 class="leading-snug">
+                  T20 World Cup 2026: Semi-Finals Confirmed in England
+                </h4>
+                <p class="text-xs text-gray-500 mt-2">
+                  Cricket fans gear up for high-voltage clashes this weekend.
+                </p>
+              </div>
+              <img
+                src="./src/assets/hot1.webp"
+                alt="news"
+                class="w-32 h-20 object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- VIDEO SIDEBAR -->
+
+          <div class="videoColumn space-y-6">
+            <h3
+              class="text-lg text-red-600 font-semibold tracking-widest uppercase border-b border-black pb-3"
+            >
+              Latest Videos
+            </h3>
+
+            <div>
+              <a href="./404.html" class="video-card relative overflow-hidden">
+                <img
+                  src="./src/assets/home1.webp"
+                  alt="news"
+                  class="w-full h-44 object-cover"
+                />
+
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <div
+                  class="absolute bottom-3 left-3 right-3 text-white text-sm"
+                >
+                  Khamenei’s Shadow Man: Strategic Influence Explained
+                </div>
+
+                <div
+                  class="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1"
+                >
+                  10:25
+                </div>
+              </a>
+            </div>
+
+            <div>
+              <a href="./404.html" class="video-card relative overflow-hidden">
+                <img
+                  src="./src/assets/home3.webp"
+                  alt="news"
+                  class="w-full h-44 object-cover"
+                />
+
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <div
+                  class="absolute bottom-3 left-3 right-3 text-white text-sm"
+                >
+                  25-Year-Old Actor Dies in Filming Accident
+                </div>
+
+                <div
+                  class="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1"
+                >
+                  08:41
+                </div>
+              </a>
+            </div>
+
+            <div>
+              <a href="./404.html" class="video-card relative overflow-hidden">
+                <img
+                  src="./src/assets/home4.webp"
+                  alt="news"
+                  class="w-full h-44 object-cover"
+                />
+
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <div
+                  class="absolute bottom-3 left-3 right-3 text-white text-sm"
+                >
+                  25-Year-Old Actor Dies in Filming Accident
+                </div>
+
+                <div
+                  class="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1"
+                >
+                  08:41
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LATEST NEWS -->
+      <section
+        class="latestSection max-w-7xl mx-auto py-16 border-b border-gray-300 px-3 md:px-6 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-3 gap-14">
+          <!-- LEFT COLUMN -->
+
+          <div class="lg:col-span-2 space-y-10">
+            <h2
+              class="text-lg text-red-600 font-semibold tracking-widest uppercase border-b border-black pb-4"
+            >
+              LATEST
+            </h2>
+
+            <!-- ARTICLE -->
+            <article
+              class="latest-article flex flex-col md:flex-row gap-6 border-b pb-8"
+            >
+              <img
+                src="./src/assets/home1.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  AI-Powered Assistants Rise: How They Manage Tasks and Boost
+                  Daily Productivity
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  AI assistants are increasingly handling scheduling, data
+                  analysis, and workflow automation as companies integrate
+                  smarter digital systems.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="latest-article flex flex-col md:flex-row gap-6 border-b pb-8"
+            >
+              <img
+                src="./src/assets/cricket.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  Business Agility in the Digital Age: Leveraging AI and
+                  Automation
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  Organizations are adopting predictive analytics and automation
+                  to respond faster to shifting market demands.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="latest-article flex flex-col md:flex-row gap-6 border-b pb-8"
+            >
+              <img
+                src="./src/assets/ker5.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  The Rise of Gourmet Street Food: Global Culinary Trends
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  Urban street vendors are redefining global cuisine with fusion
+                  flavors and elevated dining concepts.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="latest-article flex flex-col md:flex-row gap-6 border-b pb-8"
+            >
+              <img
+                src="./src/assets/tel4.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  Automation and AI Transform Modern Enterprise Strategy
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  Technology leaders are focusing on scalable digital systems to
+                  maintain operational efficiency.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="latest-article flex flex-col md:flex-row gap-6 border-b pb-8"
+            >
+              <img
+                src="./src/assets/dubai.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  Automation and AI Transform Modern Enterprise Strategy
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  Technology leaders are focusing on scalable digital systems to
+                  maintain operational efficiency.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+
+            <article class="latest-article flex flex-col md:flex-row gap-6">
+              <img
+                src="./src/assets/modi.webp"
+                alt="news"
+                class="w-full md:w-40 h-28 object-cover"
+              />
+
+              <div>
+                <h3 class="font-semibold leading-snug">
+                  Political Landscape in 2026: A Closer Look at Emerging Policy
+                  Debates
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-3">
+                  Lawmakers debate economic reform, climate policy, and digital
+                  governance as elections approach.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="read-more text-xs text-red-600 mt-3 inline-block"
+                >
+                  READ MORE
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- RIGHT SIDEBAR -->
+
+          <div class="sidebarSection space-y-10">
+            <!-- Ad Box -->
+            <div class="bg-white border p-6 text-center">
+              <h3 class="font-bold text-lg tracking-wide">NEWS</h3>
+              <p class="text-xs text-gray-500 mt-1">
+                Multi-Layout News & Editorial Blogging Template
+              </p>
+
+              <a
+                href="./404.html"
+                class="inline-block mt-4 bg-yellow-500 text-white px-5 py-2 text-xs font-semibold rounded"
+              >
+                BUY NOW
+              </a>
+
+              <p class="text-[10px] text-gray-400 mt-2">30+ BLOG DEMO</p>
+
+              <div class="mt-4">
+                <img
+                  src="./src/assets/ad1.webp"
+                  alt="ad"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <!-- Popular Now -->
+            <div class="bg-white border p-6">
+              <h3
+                class="text-xs font-semibold tracking-widest uppercase text-gray-600"
+              >
+                Popular Now
+              </h3>
+
+              <div class="mt-6 space-y-6 text-sm">
+                <div class="flex gap-4 border-b pb-4">
+                  <span class="text-red-600 font-bold">01</span>
+                  <div>
+                    <p class="leading-snug">
+                      Guide to The Rise of Gourmet Street Food: Trends and Top
+                      Picks
+                    </p>
+                    <div
+                      class="flex items-center gap-4 text-xs text-gray-500 mt-2"
+                    >
+                      <span>1 mon</span>
+                      <span><i class="fa-regular fa-comment"></i> 3</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 border-b pb-4">
+                  <span class="text-red-600 font-bold">02</span>
+                  <div>
+                    <p class="leading-snug">
+                      Tech Tools for Your Time Management Before Launch
+                    </p>
+                    <div
+                      class="flex items-center gap-4 text-xs text-gray-500 mt-2"
+                    >
+                      <span>2 mon</span>
+                      <span><i class="fa-regular fa-comment"></i> 3</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 border-b pb-4">
+                  <span class="text-red-600 font-bold">03</span>
+                  <div>
+                    <p class="leading-snug">
+                      Solo Travel: Tips and Spots for Brave Explorers
+                    </p>
+                    <div
+                      class="flex items-center gap-4 text-xs text-gray-500 mt-2"
+                    >
+                      <span>2 mon</span>
+                      <span><i class="fa-regular fa-comment"></i> 1</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <span class="text-red-600 font-bold">04</span>
+                  <div>
+                    <p class="leading-snug">
+                      AI Powered Assistants Rise: How They Manage Tasks
+                    </p>
+                    <div
+                      class="flex items-center gap-4 text-xs text-gray-500 mt-2"
+                    >
+                      <span>1 wk</span>
+                      <span><i class="fa-regular fa-comment"></i> 0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="bg-white border p-6 text-center">
+              <h3
+                class="text-xs font-semibold tracking-widest uppercase text-gray-600"
+              >
+                Follow @News
+              </h3>
+
+              <form id="newsletterForm" class="mt-6 space-y-4">
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  placeholder="Your Email"
+                  required
+                  class="w-full border px-3 py-2 text-sm outline-none focus:border-red-600"
+                />
+
+                <!-- Inline error message -->
+                <p id="emailError" class="text-xs text-red-600 hidden">
+                  Please enter a valid @gmail.com address.
+                </p>
+
+                <button
+                  type="submit"
+                  class="w-full bg-red-600 text-white py-2 text-sm font-semibold rounded"
+                >
+                  Sign Up
+                </button>
+              </form>
+
+              <div class="flex justify-center gap-4 mt-6 text-gray-500">
+                <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="./404.html"> <i class="fa-brands fa-twitter"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 GRID COLUMNS FOR CATEGORIES -->
+      <section
+        class="threeColumnSection max-w-7xl mx-auto px-3 md:px-6 py-20 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- COLUMN TEMPLATE -->
+
+          <!-- TECH -->
+          <div class="columnBlock space-y-8">
+            <a
+              href="./404.html"
+              class="flex items-center border-b border-black pb-3 text-sm text-red-600"
+            >
+              <h3 class="font-semibold tracking-widest uppercase">TECH</h3>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+
+            <div class="feature-card relative overflow-hidden">
+              <img
+                src="./src/assets/tech2.webp"
+                alt="news"
+                class="w-full h-64 object-cover"
+              />
+
+              <div
+                class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"
+              ></div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <p class="text-xs uppercase">1 Mon</p>
+                <h3 class="mt-2 font-semibold leading-snug">
+                  Guide to The Rise of Gourmet Street Food: Trends Shaping
+                  Cities
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs mt-4">
+                  <span>Anis Lew</span>
+                  <span><i class="fa-regular fa-comment"></i> 3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Business Agility in Digital Age: Leveraging AI for Growth
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">2 weeks ago</p>
+                </div>
+                <img
+                  src="./src/assets/tech1.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    AI Powered Assistants Rise: Managing Tasks Efficiently
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">1 week ago</p>
+                </div>
+                <img
+                  src="./src/assets/food.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Smart Wearables Redefine Digital Health Tracking
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">3 days ago</p>
+                </div>
+                <img
+                  src="./src/assets/cricket.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- BUSINESS -->
+          <div class="columnBlock space-y-8">
+            <a
+              href="./404.html"
+              class="flex items-center border-b border-black pb-3 text-lg text-red-600"
+            >
+              <h3 class="text-sm font-semibold tracking-widest uppercase">
+                BUSINESS
+              </h3>
+              <i class="fa-solid fa-angle-right text-xs"></i>
+            </a>
+
+            <div class="feature-card relative overflow-hidden">
+              <img
+                src="./src/assets/bus4.webp"
+                alt="news"
+                class="w-full h-64 object-cover"
+              />
+
+              <div
+                class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"
+              ></div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <p class="text-xs uppercase">2 Wk</p>
+                <h3 class="mt-2 font-semibold leading-snug">
+                  Business Agility in Digital Age: Leverage AI and Automation
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs mt-4">
+                  <span>Anis Lew</span>
+                  <span><i class="fa-regular fa-comment"></i> 4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Global Markets React to AI Investment Surge
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">5 days ago</p>
+                </div>
+                <img
+                  src="./src/assets/bus1.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Startups Accelerate Automation Strategies
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">1 week ago</p>
+                </div>
+                <img
+                  src="./src/assets/bus2.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Digital Transformation Drives Revenue Growth
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">2 weeks ago</p>
+                </div>
+                <img
+                  src="./src/assets/bus3.webp"
+                  class="w-20 h-16 object-cover"
+                  alt="news"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ARTS -->
+          <div class="columnBlock space-y-8">
+            <a
+              href="./404.html"
+              class="flex items-center border-b border-black pb-3 text-lg text-red-600"
+            >
+              <h3 class="text-sm font-semibold tracking-widest uppercase">
+                ARTS & ENTERTAINMENTS
+              </h3>
+              <i class="fa-solid fa-angle-right text-xs"></i>
+            </a>
+
+            <div class="feature-card relative overflow-hidden">
+              <img
+                src="./src/assets/art1.webp"
+                alt="news"
+                class="w-full h-64 object-cover"
+              />
+
+              <div
+                class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"
+              ></div>
+
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <p class="text-xs uppercase">1 Mon</p>
+                <h3 class="mt-2 font-semibold leading-snug">
+                  Business Agility the Digital Age: Leveraging AI and Creativity
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs mt-4">
+                  <span>Anis Lew</span>
+                  <span><i class="fa-regular fa-comment"></i> 1</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Streaming Platforms Expand Global Content Reach
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">3 weeks ago</p>
+                </div>
+                <img
+                  src="./src/assets/dubai.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Indie Artists Redefine Digital Music Distribution
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">2 weeks ago</p>
+                </div>
+                <img
+                  src="./src/assets/attukala.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <h4 class="leading-snug">
+                    Cinema Industry Embraces Immersive Storytelling
+                  </h4>
+                  <p class="text-xs text-gray-500 mt-2">1 week ago</p>
+                </div>
+                <img
+                  src="./src/assets/govern.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="max-w-7xl mx-auto px-3 md:px-6 pt-20 overflow-hidden">
+        <div class="">
+          <div class="footerGrid grid md:grid-cols-2 lg:grid-cols-3 gap-14">
+            <!-- ABOUT -->
+            <div class="footerAbout">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                About
+              </h3>
+
+              <a href="./index.html" class="mb-6 inline-block">STACKLY</a>
+
+              <p class="leading-relaxed text-sm mb-6">
+                Stackly delivers global news coverage across technology,
+                politics, and business. Our editorial team focuses on
+                investigative reporting, data-driven journalism, and thoughtful
+                analysis shaping the world.
+              </p>
+
+              <p class="text-sm mb-4">We're social, connect with us:</p>
+
+              <div class="flex gap-4 text-sm">
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-google-plus-g"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-vimeo-v"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- POPULAR POSTS -->
+            <div class="footerPopular">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                Popular Posts
+              </h3>
+
+              <div class="space-y-6">
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Global Leaders Prepare For Russian Election Fallout
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>June 28, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home4.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Markets React As Central Banks Signal Policy Pause
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 02, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/hot1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Technology Giants Accelerate AI Infrastructure Investment
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 06, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRENDING GRID -->
+            <div class="footerGallery">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                TRENDING
+              </h3>
+
+              <div class="grid grid-cols-4 gap-3">
+                <div>
+                  <a href="./404.html"
+                    ><img
+                      src="./src/assets/bus2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/art1.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/food.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/attukala.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/govern.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tel2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/kar2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/ker4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/home4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tamil2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/cricket.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div
+                >
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/eu.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div
+          class="border-t border-gray-300 text-center text-sm text-black mt-16 py-6"
+        >
+          © <span id="copyrightYear"></span> Stackly. All rights reserved.
+        </div>
+      </footer>
+
+      <!-- SCROLL TOP -->
+      <button
+        class="scrollTopBtn fixed bottom-8 right-8 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg z-50 cursor-pointer"
+      >
+        <svg class="progress-ring absolute w-full h-full -rotate-90">
+          <circle
+            class="progress-bg"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="white"
+            stroke-opacity=".15"
+            stroke-width="3"
+            fill="transparent"
+          />
+
+          <circle
+            class="progress-bar"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="#9e2e2a"
+            stroke-width="3"
+            fill="transparent"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <i class="fa-solid fa-angle-up text-red-900 text-sm relative z-10"></i>
+      </button>
+    </div>
+
+    <!-- JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>

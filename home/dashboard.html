@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Stackly | Dashboard</title>
+
+    <meta
+      name="description"
+      content="Stackly delivers breaking news, in-depth analysis, and latest updates on world affairs, technology, business, and lifestyle."
+    />
+    <meta name="author" content="Stackly" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://www.stackly.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stackly | Dashboard" />
+    <meta
+      property="og:description"
+      content="Stay updated with breaking headlines, in-depth reports, and global news coverage."
+    />
+    <meta property="og:url" content="https://www.stackly.com/" />
+    <meta property="og:site_name" content="Stackly" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollTo -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+    <!-- ScrollSmoother  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/EasePack.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Della+Respira&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Julius+Sans+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- J-QUERY CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- LENIS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.17/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="font-primary">
+    <!-- CURSOR -->
+    <div class="cursor">
+      <div class="cursor-dot"></div>
+    </div>
+
+    <!-- LOADER -->
+    <div id="re-loader" class="re-loader-wrap">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative w-[320px]">
+          <!-- UI shell -->
+          <div class="space-y-4">
+            <div class="h-4 w-32 rounded bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-3/4 s\ 0rounded-lg bg-gray-100"></div>
+          </div>
+
+          <div
+            class="absolute -bottom-12 left-0 font-medium text-black text-2xl"
+          >
+            Stackly <span class="text-red-600">News</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SITE CONTENT -->
+    <div>
+      <!-- HEADER WITH HOME -->
+      <div class="relative max-w-7xl mx-auto w-full overflow-hidden">
+        <!-- NAVBAR -->
+        <header
+          id="navbar"
+          class="fixed top-0 left-0 right-0 max-w-7xl mx-auto w-full z-40 text-sm"
+        >
+          <!-- DESKTOP NAVBAR -->
+          <nav
+            aria-label="navbar"
+            id="navbar"
+            class="bg-white flex items-center justify-between px-6 md:px-12 py-8 text-black border-b border-gray-300"
+          >
+            <div>
+              <a class="font-bold" href="./index.html">STACKLY</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+              <!-- HOME DROPDOWN -->
+              <div class="relative">
+                <div class="flex items-center gap-1 font-medium">
+                  <a class="nav-hover" href="./index.html" class="font-medium"
+                    ><span data-text="HOME">HOME</span></a
+                  >
+
+                  <button id="homeToggle">
+                    <svg
+                      id="homeCaret"
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Dropdown -->
+                <div
+                  id="homeMenu"
+                  class="absolute left-0 mt-8 w-36 bg-white text-black backdrop-blur-xl overflow-hidden hidden"
+                >
+                  <a
+                    href="../index.html"
+                    class="home-item block px-6 py-4 text-sm hover:bg-primary/10"
+                    >Home 1</a
+                  >
+                </div>
+              </div>
+
+              <a class="nav-hover" href="./politics.html"
+                ><span data-text="POLITICS">POLITICS</span></a
+              >
+              <a class="nav-hover" href="./sports.html"
+                ><span data-text="SPORTS">SPORTS</span></a
+              >
+              <a class="nav-hover" href="./media.html"
+                ><span data-text="MEDIA">MEDIA</span></a
+              >
+              <a class="nav-hover" href="./contact.html"
+                ><span data-text="CONTACT">CONTACT</span></a
+              >
+              <a class="nav-hover" href="./dashboard.html"
+                ><span data-text="DASHBOARD">DASHBOARD</span></a
+              >
+            </div>
+            <div class="hidden lg:flex">
+              <a href="./login.html">Login</a>
+            </div>
+
+            <!-- HAMBURGER ICON -->
+            <div class="text-2xl cursor-pointer ham-icon block lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </nav>
+
+          <!-- MOBILE NAV -->
+          <div
+            class="fixed inset-0 w-full min-h-screen bg-white flex flex-col gap-12 justify-center px-12 md:px-20 z-40 transform translate-x-full transition-transform duration-1000 text-xl sm:text-3xl font-bold mobile-menu"
+          >
+            <!-- HOME with sub menu -->
+            <div class="relative">
+              <div class="flex items-center gap-2 menu-link">
+                <a href="./index.html">HOME</a>
+
+                <button id="mobileHomeToggle">
+                  <i
+                    id="mobileCaret"
+                    class="fa-solid fa-chevron-down text-lg"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="mt-4 hidden absolute bg-white rounded-lg z-40 w-40 px-6 py-6 text-2xl"
+                id="mobileHomeMenu"
+              >
+                <a class="block mobile-home-item mb-3" href="../index.html"
+                  >Home 1</a
+                >
+              </div>
+            </div>
+
+            <a class="menu-link" href="./politics.html">POLITICS</a>
+            <a class="menu-link" href="./sports.html">SPORTS</a>
+            <a class="menu-link" href="./media.html">MEDIA</a>
+            <a class="menu-link" href="./contact.html">CONTACT</a>
+            <a class="menu-link" href="./login.html">LOGIN</a>
+            <button
+              class="close-menu text-2xl cursor-pointer absolute top-10 right-12 p-4 border border-white/20 rounded-full"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- HOME -->
+        <main id="home"></main>
+      </div>
+
+      <!-- HERO SECTION -->
+      <section
+        class="max-w-7xl mx-auto px-3 md:px-6 py-10 mt-32 overflow-hidden"
+      >
+        <!-- HEADER -->
+
+        <div class="flex flex-wrap items-center justify-between gap-6 mb-12">
+          <h1 class="text-3xl font-semibold">
+            Welcome Back, Stackly Analytics
+          </h1>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="./404.html" class="bg-white border px-4 py-2 rounded">
+              <i class="fa-regular fa-calendar"></i> 1 Oct - 15 Oct 2023
+            </a>
+
+            <a href="./404.html" class="bg-white border px-4 py-2 rounded">
+              <i class="fa-solid fa-chart-column"></i> Compare
+            </a>
+          </div>
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="flex flex-wrap gap-3 mb-14">
+          <a href="./404.html" class="bg-white border px-4 py-2 rounded"
+            >Today</a
+          >
+          <a href="./404.html" class="bg-gray-900 text-white px-4 py-2 rounded">
+            9 - 15 Oct
+          </a>
+          <a href="./404.html" class="bg-white border px-4 py-2 rounded"
+            >Oct 2023</a
+          >
+          <a href="./404.html" class="bg-white border px-4 py-2 rounded">
+            This Year - 2023
+          </a>
+        </div>
+
+        <!-- METRICS -->
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-500 mb-2">Page Views</p>
+            <h2 class="text-2xl font-semibold">98,634</h2>
+            <span class="text-green-600 text-sm">+28%</span>
+          </div>
+
+          <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-500 mb-2">Active User</p>
+            <h2 class="text-2xl font-semibold">10,123</h2>
+            <span class="text-green-600 text-sm">+8%</span>
+          </div>
+
+          <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-500 mb-2">Revenue</p>
+            <h2 class="text-2xl font-semibold">$1,549</h2>
+            <span class="text-red-600 text-sm">-3%</span>
+          </div>
+
+          <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-500 mb-2">New User</p>
+            <h2 class="text-2xl font-semibold">2,567</h2>
+            <span class="text-green-600 text-sm">+12%</span>
+          </div>
+        </div>
+
+        <!-- CHART + SOURCES -->
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- TRAFFIC -->
+
+          <div class="bg-white p-6 rounded shadow lg:col-span-2">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-semibold">Site Traffic</h3>
+
+              <a
+                href="./404.html"
+                class="bg-gray-900 text-white px-4 py-2 rounded text-sm"
+              >
+                Detail Report →
+              </a>
+            </div>
+
+            <canvas id="trafficChart" height="130"></canvas>
+          </div>
+
+          <!-- SOURCES -->
+
+          <div class="bg-white p-6 rounded shadow">
+            <h3 class="font-semibold mb-6">Top Channel Sources</h3>
+
+            <div class="space-y-6">
+              <div>
+                <p class="text-gray-600">Organic Search</p>
+                <div class="flex justify-between">
+                  <span class="font-semibold">54%</span>
+                  <span class="text-green-600 text-sm">+9%</span>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-gray-600">Direct Homepage</p>
+                <div class="flex justify-between">
+                  <span class="font-semibold">26%</span>
+                  <span class="text-red-600 text-sm">-5%</span>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-gray-600">Email Newsletter</p>
+                <div class="flex justify-between">
+                  <span class="font-semibold">11%</span>
+                  <span class="text-green-600 text-sm">+12%</span>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-gray-600">Categories Page</p>
+                <div class="flex justify-between">
+                  <span class="font-semibold">18%</span>
+                  <span class="text-green-600 text-sm">+16%</span>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-gray-600">Daily Visitors</p>
+                <div class="flex justify-between">
+                  <span class="font-semibold">19.80%</span>
+                  <span class="text-green-600 text-sm">+16%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEADLINE -->
+      <section
+        class="adminHeadlinesSection max-w-7xl mx-auto px-3 md:px-6 py-10 overflow-hidden"
+      >
+        <h2 class="text-2xl font-semibold mb-8">Headlines Manager</h2>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- LEFT FEATURED NEWS -->
+          <div
+            class="headlineFeatured lg:col-span-2 bg-white rounded-md shadow overflow-hidden"
+          >
+            <img
+              src="./src/assets/home4.webp"
+              alt="news"
+              class="w-full h-80 object-cover"
+            />
+
+            <div class="p-3 md:p-6">
+              <span class="text-xs text-red-600 font-semibold uppercase">
+                Featured Headline
+              </span>
+
+              <h3 class="text-xl font-semibold mt-2 leading-snug">
+                Global Leaders Meet to Address Climate Policy and Economic
+                Cooperation in Emergency Summit
+              </h3>
+
+              <p class="text-sm text-gray-600 mt-3">
+                International leaders gathered today to discuss urgent climate
+                strategies and economic collaboration as global markets respond
+                to rising environmental concerns.
+              </p>
+
+              <div class="flex flex-wrap gap-4 mt-5">
+                <a
+                  href="./404.html"
+                  class="text-sm text-white bg-red-600 px-4 py-2 rounded"
+                >
+                  Edit Headline
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="text-sm text-gray-700 border px-4 py-2 rounded"
+                >
+                  Manage Article
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE HEADLINES -->
+          <div class="headlineList bg-white rounded-md shadow p-6">
+            <h3 class="text-lg font-semibold mb-6">Latest Headlines</h3>
+
+            <div class="space-y-5">
+              <!-- ITEM -->
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  Tech Companies Announce New AI Regulations Following
+                  Government Policy Review
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  Stock Markets Rally as Investors React to Global Trade
+                  Agreement Breakthrough
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  Major Sports League Confirms Expansion Plans for the Upcoming
+                  International Season
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  Scientists Reveal Breakthrough Renewable Energy Technology
+                  That Could Transform Global Power Supply
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  International Film Festival Announces Record Submissions from
+                  Emerging Directors Worldwide
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="headlineItem flex justify-between items-start gap-3">
+                <p class="text-sm leading-snug">
+                  Central Bank Signals Possible Interest Rate Changes as Global
+                  Inflation Pressures Continue
+                </p>
+
+                <a href="./404.html" class="text-xs text-red-600 font-semibold">
+                  Manage
+                </a>
+              </div>
+
+              <div class="text-sm text-gray-400">
+                <a href="./404.html"
+                  >See More <i class="fa-solid fa-angle-right text-xs"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEADLINES -->
+      <section
+        class="stacklyChannels max-w-7xl mx-auto px-3 md:px-6 py-10 overflow-hidden"
+      >
+        <div>
+          <!-- TODAY HEADLINES -->
+
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-semibold">Today's Headlines</h2>
+
+            <a href="#" class="text-sm text-gray-500 hover:text-black">
+              See all <i class="fa-solid fa-angle-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/modi.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Debate grows over online speech and digital platform policies
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 1.2k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 340 </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/kar5.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Ontario leadership race intensifies ahead of upcoming party
+                  vote
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 1.0k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 320 </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/dubai.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Community rallies after Scarborough safety concerns spark
+                  debate
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 2.4k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 1.1k </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/latest.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  World Cup excitement drives record sports streaming numbers
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 3.1k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 1.4k </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/home3.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Debate grows over online speech and digital platform policies
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 1.2k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 340 </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/kar1.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Ontario leadership race intensifies ahead of upcoming party
+                  vote
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 1.0k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 320 </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/cricket.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  Community rallies after Scarborough safety concerns spark
+                  debate
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 2.4k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 1.1k </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="headlineCard bg-white p-4 rounded shadow flex gap-3">
+              <div class="w-20 h-16">
+                <img
+                  src="./src/assets/spo7.webp"
+                  alt="news"
+                  class="w-20 h-16 object-cover rounded"
+                />
+              </div>
+
+              <div>
+                <h4 class="text-sm font-medium leading-snug mb-1">
+                  World Cup excitement drives record sports streaming numbers
+                </h4>
+
+                <div class="flex items-center text-xs text-gray-500 gap-3">
+                  <span> <i class="fa-regular fa-heart"></i> 3.1k </span>
+
+                  <span> <i class="fa-regular fa-comment"></i> 1.4k </span>
+
+                  <span>2:00 pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE ACTIVITY -->  
+      <section
+        class="stacklyNewsPanel max-w-7xl mx-auto px-3 md:px-6 py-10 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+          <!-- LEFT : ARTICLE ACTIVITY -->
+
+          <div class="bg-white rounded-xl shadow p-6">
+            <h3 class="text-lg font-semibold mb-6">Latest Article Activity</h3>
+
+            <p class="text-xs text-gray-400 mb-4">TODAY</p>
+
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-newspaper text-red-600"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium">
+                      Election Coverage Article Published
+                    </p>
+                    <span class="text-xs text-gray-500">Politics Desk</span>
+                  </div>
+                </div>
+
+                <span class="text-green-600 text-sm">+3.2k Views</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-chart-line text-blue-600"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium">
+                      Tech Startups Funding Report Updated
+                    </p>
+                    <span class="text-xs text-gray-500">Technology</span>
+                  </div>
+                </div>
+
+                <span class="text-green-600 text-sm">+1.1k Reads</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-9 h-9 rounded-full bg-yellow-100 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-earth-americas text-yellow-600"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium">
+                      Global Climate Summit Coverage
+                    </p>
+                    <span class="text-xs text-gray-500">World News</span>
+                  </div>
+                </div>
+
+                <span class="text-green-600 text-sm">+5.6k Views</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-9 h-9 rounded-full bg-purple-100 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-film text-purple-600"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium">
+                      Movie Review: Summer Blockbuster
+                    </p>
+                    <span class="text-xs text-gray-500">Entertainment</span>
+                  </div>
+                </div>
+
+                <span class="text-green-600 text-sm">+2.4k Reads</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-8 mb-4">YESTERDAY</p>
+
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-football text-gray-600"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium">
+                      World Cup Match Analysis Published
+                    </p>
+                    <span class="text-xs text-gray-500">Sports Desk</span>
+                  </div>
+                </div>
+
+                <span class="text-red-500 text-sm">-900 Views</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT : EDITOR PICKS -->
+
+          <div class="bg-white rounded-xl shadow p-6">
+            <h3 class="text-lg font-semibold mb-6">Editor Picks</h3>
+
+            <p class="text-xs text-gray-400 mb-4">TODAY</p>
+
+            <div class="space-y-5">
+              <div class="flex gap-3 items-center">
+                <img
+                  src="./src/assets/tamil5.webp"
+                  alt="news"
+                  class="w-12 h-12 object-cover rounded"
+                />
+
+                <p class="text-sm leading-snug">
+                  Why global economies are watching the latest inflation data
+                </p>
+              </div>
+
+              <div class="flex gap-3 items-center">
+                <img
+                  src="./src/assets/bus3.webp"
+                  alt="news"
+                  class="w-12 h-12 object-cover rounded"
+                />
+
+                <p class="text-sm leading-snug">
+                  AI regulation debate intensifies across major tech companies
+                </p>
+              </div>
+
+              <div class="flex gap-3 items-center">
+                <img
+                  src="./src/assets/a8.webp"
+                  alt="news"
+                  class="w-12 h-12 object-cover rounded"
+                />
+
+                <p class="text-sm leading-snug">
+                  New streaming platforms challenge traditional TV networks
+                </p>
+              </div>
+
+              <div class="flex gap-3 items-center">
+                <img
+                  src="./src/assets/govern.webp"
+                  alt="news"
+                  class="w-12 h-12 object-cover rounded"
+                />
+
+                <p class="text-sm leading-snug">
+                  Global markets react to interest rate pause signals
+                </p>
+              </div>
+
+              <div class="flex gap-3 items-center">
+                <img
+                  src="./src/assets/spo5.webp"
+                  alt="news"
+                  class="w-12 h-12 object-cover rounded"
+                />
+
+                <p class="text-sm leading-snug">
+                  Sports leagues expand international tournaments
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="max-w-7xl mx-auto px-3 md:px-6 pt-20 overflow-hidden">
+        <div class="">
+          <div class="footerGrid grid md:grid-cols-2 lg:grid-cols-3 gap-14">
+            <!-- ABOUT -->
+            <div class="footerAbout">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                About
+              </h3>
+
+              <a href="./index.html" class="mb-6 inline-block">STACKLY</a>
+
+              <p class="leading-relaxed text-sm mb-6">
+                Stackly delivers global news coverage across technology,
+                politics, and business. Our editorial team focuses on
+                investigative reporting, data-driven journalism, and thoughtful
+                analysis shaping the world.
+              </p>
+
+              <p class="text-sm mb-4">We're social, connect with us:</p>
+
+              <div class="flex gap-4 text-sm">
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-google-plus-g"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-vimeo-v"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- POPULAR POSTS -->
+            <div class="footerPopular">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                Popular Posts
+              </h3>
+
+              <div class="space-y-6">
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Global Leaders Prepare For Russian Election Fallout
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>June 28, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home4.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Markets React As Central Banks Signal Policy Pause
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 02, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/hot1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Technology Giants Accelerate AI Infrastructure Investment
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 06, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRENDING GRID -->
+            <div class="footerGallery">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                TRENDING
+              </h3>
+
+              <div class="grid grid-cols-4 gap-3">
+                <div>
+                  <a href="./404.html"
+                    ><img
+                      src="./src/assets/bus2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/art1.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/food.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/attukala.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/govern.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tel2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/kar2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/ker4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/home4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tamil2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/cricket.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/eu.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div
+          class="border-t border-gray-300 text-center text-sm text-black mt-16 py-6"
+        >
+          © <span id="copyrightYear"></span> Stackly. All rights reserved.
+        </div>
+      </footer>
+
+      <!-- SCROLL TOP -->
+      <button
+        class="scrollTopBtn fixed bottom-8 right-8 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg z-50 cursor-pointer"
+      >
+        <svg class="progress-ring absolute w-full h-full -rotate-90">
+          <circle
+            class="progress-bg"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="white"
+            stroke-opacity=".15"
+            stroke-width="3"
+            fill="transparent"
+          />
+
+          <circle
+            class="progress-bar"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="#9e2e2a"
+            stroke-width="3"
+            fill="transparent"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <i class="fa-solid fa-angle-up text-red-900 text-sm relative z-10"></i>
+      </button>
+    </div>
+
+    <!-- JS -->
+    <script src="./dashboard.js"></script>
+  </body>
+</html>

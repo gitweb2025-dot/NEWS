@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Stackly | Sports</title>
+
+    <meta
+      name="description"
+      content="Stackly delivers breaking news, in-depth analysis, and latest updates on world affairs, technology, business, and lifestyle."
+    />
+    <meta name="author" content="Stackly" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://www.stackly.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stackly | Sports" />
+    <meta
+      property="og:description"
+      content="Stay updated with breaking headlines, in-depth reports, and global news coverage."
+    />
+    <meta property="og:url" content="https://www.stackly.com/" />
+    <meta property="og:site_name" content="Stackly" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollTo -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+    <!-- ScrollSmoother  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/EasePack.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Della+Respira&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Julius+Sans+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- J-QUERY CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- LENIS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.17/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="font-primary">
+    <!-- CURSOR -->
+    <div class="cursor">
+      <div class="cursor-dot"></div>
+    </div>
+
+    <!-- LOADER -->
+    <div id="re-loader" class="re-loader-wrap">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative w-[320px]">
+          <!-- UI shell -->
+          <div class="space-y-4">
+            <div class="h-4 w-32 rounded bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-full rounded-lg bg-gray-100"></div>
+            <div class="h-10 w-3/4 s\ 0rounded-lg bg-gray-100"></div>
+          </div>
+
+          <div
+            class="absolute -bottom-12 left-0 font-medium text-black text-2xl"
+          >
+            Stackly <span class="text-red-600">News</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SITE CONTENT -->
+    <div>
+      <!-- HEADER WITH HOME -->
+      <div class="relative max-w-7xl mx-auto w-full overflow-hidden">
+        <!-- NAVBAR -->
+        <header
+          id="navbar"
+          class="fixed top-0 left-0 right-0 max-w-7xl mx-auto w-full z-40 text-sm"
+        >
+          <!-- DESKTOP NAVBAR -->
+          <nav
+            aria-label="navbar"
+            id="navbar"
+            class="bg-white flex items-center justify-between px-6 md:px-12 py-8 text-black border-b border-gray-300"
+          >
+            <div>
+              <a class="font-bold" href="./index.html">STACKLY</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+              <!-- HOME DROPDOWN -->
+              <div class="relative">
+                <div class="flex items-center gap-1 font-medium">
+                  <a class="nav-hover" href="./index.html" class="font-medium"
+                    ><span data-text="HOME">HOME</span></a
+                  >
+
+                  <button id="homeToggle">
+                    <svg
+                      id="homeCaret"
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Dropdown -->
+                <div
+                  id="homeMenu"
+                  class="absolute left-0 mt-8 w-36 bg-white text-black backdrop-blur-xl overflow-hidden hidden"
+                >
+                  <a
+                    href="./home/index.html"
+                    class="home-item block px-6 py-4 text-sm hover:bg-primary/10"
+                    >Home 2</a
+                  >
+                </div>
+              </div>
+
+              <a class="nav-hover" href="./politics.html"
+                ><span data-text="POLITICS">POLITICS</span></a
+              >
+              <a class="nav-hover" href="./sports.html"
+                ><span data-text="SPORTS">SPORTS</span></a
+              >
+              <a class="nav-hover" href="./media.html"
+                ><span data-text="MEDIA">MEDIA</span></a
+              >
+              <a class="nav-hover" href="./contact.html"
+                ><span data-text="CONTACT">CONTACT</span></a
+              >
+              <a class="nav-hover" href="./dashboard.html"
+                ><span data-text="DASHBOARD">DASHBOARD</span></a
+              >
+            </div>
+            <div class="hidden lg:flex">
+              <a href="./login.html">Login</a>
+            </div>
+
+            <!-- HAMBURGER ICON -->
+            <div class="text-2xl cursor-pointer ham-icon block lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </nav>
+
+          <!-- MOBILE NAV -->
+          <div
+            class="fixed inset-0 w-full min-h-screen bg-white flex flex-col gap-12 justify-center px-12 md:px-20 z-40 transform translate-x-full transition-transform duration-1000 text-xl sm:text-3xl font-bold mobile-menu"
+          >
+            <!-- HOME with sub menu -->
+            <div class="relative">
+              <div class="flex items-center gap-2 menu-link">
+                <a href="./index.html">HOME</a>
+
+                <button id="mobileHomeToggle">
+                  <i
+                    id="mobileCaret"
+                    class="fa-solid fa-chevron-down text-lg"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="mt-4 hidden absolute bg-white rounded-lg z-40 w-40 px-6 py-6 text-2xl"
+                id="mobileHomeMenu"
+              >
+                <a class="block mobile-home-item mb-3" href="./home/index.html"
+                  >Home 2</a
+                >
+              </div>
+            </div>
+
+            <a class="menu-link" href="./politics.html">POLITICS</a>
+            <a class="menu-link" href="./sports.html">SPORTS</a>
+            <a class="menu-link" href="./media.html">MEDIA</a>
+            <a class="menu-link" href="./contact.html">CONTACT</a>
+            <a class="menu-link" href="./login.html">LOGIN</a>
+            <button
+              class="close-menu text-2xl cursor-pointer absolute top-10 right-12 p-4 border border-white/20 rounded-full"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- HOME -->
+        <main id="home"></main>
+      </div>
+
+      <!-- HERO -->
+      <section
+        class="max-w-7xl mx-auto mt-32 px-3 md:px-6 my-16 overflow-hidden"
+      >
+        <div class="">
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- LEFT MOVIE NEWS -->
+            <div class="movieLeft space-y-6">
+              <div class="movieListItem border-b pb-4">
+                <p class="text-red-600 text-xs mb-2">MOVIES</p>
+                <h4>
+                  ‘Meet Me in Montauk’: Love, memory, and erasure in Charlie
+                  Kaufman’s Eternal Sunshine of the Spotless Mind
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Bhuvanesh Chander</p>
+              </div>
+
+              <div class="movieListItem border-b pb-4">
+                <p class="text-red-600 text-xs mb-2">MOVIES</p>
+                <h4>
+                  ‘Flame’: movie review: Jessie Buckley and Paul Mescal in a
+                  towering song of sorrow
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Mini Anthikad Chhibber</p>
+              </div>
+
+              <div class="movieListItem border-b pb-4">
+                <p class="text-red-600 text-xs mb-2">MOVIES</p>
+                <h4>
+                  ‘Thai Kizhavi’ movie review: Radikaa Sarathkumar’s masala
+                  comedy of gold standards signals a commanding new filmmaking
+                  voice
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Bhuvanesh Chander</p>
+              </div>
+
+              <div class="movieListItem flex flex-col gap-4 mt-6">
+                <img
+                  src="./src/assets/media-bottom.webp"
+                  alt="news"
+                  class="w-full h-24 object-cover object-top"
+                />
+
+                <div>
+                  <p class="text-red-600 text-xs mb-1">ENTERTAINMENT</p>
+                  <h4>
+                    ‘Accused’ movie review: A perceptive take on #MeToo
+                    discourse
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- CENTER FEATURE MOVIE -->
+            <div class="movieFeature relative overflow-hidden">
+              <img
+                src="./src/assets/media-hero.webp"
+                alt="news"
+                class="w-full h-100 lg:h-full object-top object-cover"
+              />
+
+              <div
+                class="absolute inset-0 bg-linear-to-b from-transparent to-black/60"
+              ></div>
+
+              <div
+                class="movieFeatureContent absolute inset-0 flex flex-col justify-end p-3 md:p-6 text-white text-center"
+              >
+                <p class="text-red-600 text-xs mb-2">MOVIES</p>
+
+                <h2>
+                  ‘Bridgerton Season 4’ Part 2 Series Review: Queen Charlotte
+                  Rules the Screen
+                </h2>
+
+                <p class="mt-4 text-sm text-gray-200">
+                  While the Benedict and Sophie love story plays out to its
+                  logical end, it is the friendship between Queen Charlotte and
+                  Lady Danbury that truly warms the heart.
+                </p>
+              </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="movieSidebar space-y-8">
+              <!-- AD -->
+              <div class="bg-white relative">
+                <img
+                  class="h-80 w-full object-cover"
+                  src="./src/assets/ad-media.webp"
+                  alt="news"
+                />
+
+                <a
+                  class="px-6 py-1 bg-white/15 border border-white/50 text-white rounded-full absolute right-3 top-3"
+                  href="./404.html"
+                  >Ad</a
+                >
+              </div>
+
+              <!-- MOST POPULAR -->
+              <div class="bg-white">
+                <p class="text-red-600 mb-4">Most Popular</p>
+
+                <div class="space-y-5">
+                  <div class="popularItem flex gap-3">
+                    <img
+                      src="./src/assets/top-media-1.webp"
+                      alt="news"
+                      class="w-20 h-16 object-cover"
+                    />
+
+                    <p>
+                      Khamenei killing: Five geopolitical factors behind India’s
+                      silence
+                    </p>
+                  </div>
+
+                  <div class="popularItem flex gap-3">
+                    <img
+                      src="./src/assets/top-media-2.webp"
+                      alt="news"
+                      class="w-20 h-16 object-cover"
+                    />
+
+                    <p>
+                      Election Commission set to announce poll dates for West
+                      Bengal
+                    </p>
+                  </div>
+
+                  <div class="popularItem flex gap-3">
+                    <img
+                      src="./src/assets/top-media-3.webp"
+                      alt="news"
+                      class="w-20 h-16 object-cover"
+                    />
+
+                    <p>
+                      India has 25 days of crude oil in reserve amid rising
+                      prices
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOGS -->
+      <section
+        class="max-w-7xl mx-auto mt-32 px-3 md:px-6 my-16 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="moviePosts space-y-14 lg:col-span-2">
+            <!-- POST -->
+            <article
+              class="moviePostItem flex flex-col md:flex-row gap-8 pb-10 border-b"
+            >
+              <img
+                src="./src/assets/dune.webp"
+                alt="news"
+                class="w-full md:w-64 h-40 object-cover"
+              />
+
+              <div class="moviePostContent">
+                <h3 class="leading-snug">
+                  ‘Dune: Part Three’ Rumors Intensify as Denis Villeneuve Hints
+                  at Final Chapter
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs text-gray-500 mt-3">
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-user"></i> Anis Lew
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-calendar"></i> Feb 7, 2026
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-comment"></i> 6
+                  </span>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-4 lg:line-clamp-2">
+                  The director suggests the epic sci-fi saga may conclude with a
+                  third installment, expanding Paul Atreides’ journey across
+                  Arrakis.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="movieReadMore text-red-600 text-sm mt-4 inline-block"
+                >
+                  Continue reading
+                </a>
+              </div>
+            </article>
+
+            <!-- POST -->
+            <article
+              class="moviePostItem flex flex-col md:flex-row gap-8 pb-10 border-b"
+            >
+              <img
+                src="./src/assets/open.webp"
+                alt="news"
+                class="w-full md:w-64 h-40 object-cover"
+              />
+
+              <div>
+                <h3 class="leading-snug">
+                  ‘Oppenheimer’ Continues Awards Dominance as Critics Praise
+                  Nolan’s Vision
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs text-gray-500 mt-3">
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-user"></i> Anis Lew
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-calendar"></i> Jan 25, 2026
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-comment"></i> 4
+                  </span>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-4 lg:line-clamp-2">
+                  Christopher Nolan’s historical drama continues to dominate
+                  international awards circuits, earning acclaim for its
+                  storytelling and performances.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="movieReadMore text-red-600 text-sm mt-4 inline-block"
+                >
+                  Continue reading
+                </a>
+              </div>
+            </article>
+
+            <!-- POST -->
+            <article class="moviePostItem flex flex-col md:flex-row gap-8">
+              <img
+                src="./src/assets/gow.webp"
+                alt="news"
+                class="w-full md:w-64 h-40 object-cover"
+              />
+
+              <div>
+                <h3 class="leading-snug">
+                  Streaming Platforms to Encouraging Race to Secure Global Film
+                  Premieres in 2026
+                </h3>
+
+                <div class="flex items-center gap-4 text-xs text-gray-500 mt-3">
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-user"></i> Anis Lew
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-calendar"></i> Jan 11, 2026
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-comment"></i> 2
+                  </span>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-4 lg:line-clamp-2">
+                  Netflix, Amazon, and Apple are aggressively competing for
+                  exclusive distribution rights to major international film
+                  releases.
+                </p>
+
+                <a
+                  href="./404.html"
+                  class="movieReadMore text-red-600 text-sm mt-4 inline-block"
+                >
+                  Continue reading
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="relative">
+            <img
+              src="./src/assets/media-sidebar.webp"
+              alt="news"
+              class="w-full h-96 lg:h-full object-cover"
+            />
+
+            <div
+              class="absolute inset-0 bg-linear-to-b from-transparent to-black/60"
+            ></div>
+
+            <div
+              class="movieFeatureContent absolute inset-0 flex flex-col justify-end p-3 md:p-6 text-white text-center"
+            >
+              <p class="text-red-600 text-xs mb-2">MOVIES</p>
+
+              <h2>
+                ‘Bridgerton Season 4’ Part 2 Series Review: Queen Charlotte
+                Rules the Screen
+              </h2>
+
+              <p class="mt-4 text-sm text-gray-200">
+                While the Benedict and Sophie love story plays out to its
+                logical end, it is the friendship between Queen Charlotte and
+                Lady Danbury that truly warms the heart.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOGS WITH VID -->
+      <section
+        class="max-w-7xl mx-auto mt-32 px-3 md:px-6 my-16 overflow-hidden"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- LEFT SIDE -->
+          <div class="relative">
+            <img
+              src="./src/assets/media-leftbar.webp"
+              alt="news"
+              class="w-full h-96 lg:h-full object-cover"
+            />
+
+            <div
+              class="absolute inset-0 bg-linear-to-b from-transparent to-black/60"
+            ></div>
+
+            <div
+              class="movieFeatureContent absolute inset-0 flex flex-col justify-end p-3 md:p-6 text-white text-center"
+            >
+              <p class="text-red-600 text-xs mb-2">MOVIES</p>
+
+              <h2>
+                ‘Bridgerton Season 4’ Part 2 Series Review: Queen Charlotte
+                Rules the Screen
+              </h2>
+
+              <p class="mt-4 text-sm text-gray-200">
+                While the Benedict and Sophie love story plays out to its
+                logical end, it is the friendship between Queen Charlotte and
+                Lady Danbury that truly warms the heart.
+              </p>
+            </div>
+          </div>
+
+          <div class="movieNewsList space-y-8 lg:col-span-2">
+            <!-- ITEM -->
+            <article
+              class="movieNewsItem flex justify-between gap-6 pb-6 border-b"
+            >
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Marvel Confirms New ‘Avengers’ Film as Multiverse Saga Expands
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  Marvel Studios has officially confirmed the next Avengers
+                  installment, bringing together heroes from multiple timelines
+                  in the expanding multiverse storyline.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a1.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+
+            <!-- ITEM -->
+            <article
+              class="movieNewsItem flex justify-between gap-6 pb-6 border-b"
+            >
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Christopher Nolan Begins Production on New Sci-Fi Epic
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  The director behind ‘Oppenheimer’ and ‘Interstellar’ is
+                  reportedly working on a large-scale science fiction film
+                  scheduled for release in 2027.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a2.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+
+            <!-- ITEM -->
+            <article
+              class="movieNewsItem flex justify-between gap-6 pb-6 border-b"
+            >
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Netflix Invests $1 Billion in Global Film Productions
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  The streaming giant announced a massive investment in
+                  international film productions to strengthen its original
+                  movie catalog worldwide.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a3.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+
+            <!-- ITEM -->
+            <article
+              class="movieNewsItem flex justify-between gap-6 pb-6 border-b"
+            >
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Netflix Invests $1 Billion in Global Film Productions
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  The streaming giant announced a massive investment in
+                  international film productions to strengthen its original
+                  movie catalog worldwide.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a4.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+
+            <!-- ITEM -->
+            <article
+              class="movieNewsItem flex justify-between gap-6 pb-6 border-b"
+            >
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Netflix Invests $1 Billion in Global Film Productions
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  The streaming giant announced a massive investment in
+                  international film productions to strengthen its original
+                  movie catalog worldwide.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a5.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+
+            <!-- ITEM -->
+            <article class="movieNewsItem flex justify-between gap-6">
+              <div class="flex-1">
+                <h3 class="leading-snug">
+                  Film Festivals Spotlight Emerging Directors in 2026 Season
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                  Independent filmmakers are gaining international attention as
+                  major festivals highlight experimental storytelling and new
+                  cinematic voices.
+                </p>
+              </div>
+
+              <a href="./404.html">
+                <img
+                  src="./src/assets/a7.webp"
+                  alt="news"
+                  class="w-40 h-24 object-cover rounded-xl"
+                />
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="max-w-7xl mx-auto px-3 md:px-6 pt-20 overflow-hidden">
+        <div class="">
+          <div class="footerGrid grid md:grid-cols-2 lg:grid-cols-3 gap-14">
+            <!-- ABOUT -->
+            <div class="footerAbout">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                About
+              </h3>
+
+              <a href="./index.html" class="mb-6 inline-block">STACKLY</a>
+
+              <p class="leading-relaxed text-sm mb-6">
+                Stackly delivers global news coverage across technology,
+                politics, and business. Our editorial team focuses on
+                investigative reporting, data-driven journalism, and thoughtful
+                analysis shaping the world.
+              </p>
+
+              <p class="text-sm mb-4">We're social, connect with us:</p>
+
+              <div class="flex gap-4 text-sm">
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-google-plus-g"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-vimeo-v"></i>
+                </a>
+
+                <a
+                  href="./404.html"
+                  class="footerSocial w-9 h-9 flex items-center justify-center bg-white border border-gray-300 rounded-full"
+                >
+                  <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- POPULAR POSTS -->
+            <div class="footerPopular">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                Popular Posts
+              </h3>
+
+              <div class="space-y-6">
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Global Leaders Prepare For Russian Election Fallout
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>June 28, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/home4.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Markets React As Central Banks Signal Policy Pause
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 02, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footerPost flex gap-4">
+                  <img
+                    src="./src/assets/hot1.webp"
+                    alt="news"
+                    class="w-28 h-20 object-cover"
+                  />
+
+                  <div>
+                    <h4 class="leading-snug">
+                      Technology Giants Accelerate AI Infrastructure Investment
+                    </h4>
+
+                    <div
+                      class="flex items-center gap-2 text-xs text-gray-400 mt-2"
+                    >
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>July 06, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRENDING GRID -->
+            <div class="footerGallery">
+              <h3
+                class="uppercase text-black mb-6 border-b border-gray-700 pb-3"
+              >
+                TRENDING
+              </h3>
+
+              <div class="grid grid-cols-4 gap-3">
+                <div>
+                  <a href="./404.html"
+                    ><img
+                      src="./src/assets/bus2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/art1.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/food.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/attukala.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/govern.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tel2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/kar2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/ker4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                  /></a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/home4.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/tamil2.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/cricket.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a href="./404.html">
+                    <img
+                      src="./src/assets/eu.webp"
+                      alt="news"
+                      class="footerFlickr w-full h-16 object-cover"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div
+          class="border-t border-gray-300 text-center text-sm text-black mt-16 py-6"
+        >
+          © <span id="copyrightYear"></span> Stackly. All rights reserved.
+        </div>
+      </footer>
+
+      <!-- SCROLL TOP -->
+      <button
+        class="scrollTopBtn fixed bottom-8 right-8 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg z-50 cursor-pointer"
+      >
+        <svg class="progress-ring absolute w-full h-full -rotate-90">
+          <circle
+            class="progress-bg"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="white"
+            stroke-opacity=".15"
+            stroke-width="3"
+            fill="transparent"
+          />
+
+          <circle
+            class="progress-bar"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="#9e2e2a"
+            stroke-width="3"
+            fill="transparent"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <i class="fa-solid fa-angle-up text-red-900 text-sm relative z-10"></i>
+      </button>
+    </div>
+
+    <!-- JS -->
+    <script src="./media.js"></script>
+  </body>
+</html>
