@@ -94,22 +94,22 @@
 .headline-prev,
 .headline-next {
   position: absolute;
-  top: 50%;
+  top: -40px;
   transform: translateY(-50%);
   width: 38px;
   height: 38px;
-  background: hsl(0, 0%, 100%);
+  background: lab(66.24% 0 -0.01 / 0.253);
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  display: none;
+  /* display: none; */
 }
 
 .headline-prev {
-  left: 0;
+  right: 50px;
 }
 .headline-next {
-  right: 0;
+  right: 5px;
 }
 
 .headline-prev::after {
